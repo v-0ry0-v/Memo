@@ -20,6 +20,8 @@
 		0A868E6828EF87FC00B101AA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A868E6728EF87FC00B101AA /* RealmSwift */; };
 		0A868E6B28EF881300B101AA /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E6A28EF881300B101AA /* Memo.swift */; };
 		0A868E6E28EF8A1A00B101AA /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E6D28EF8A1A00B101AA /* UIAlertController+.swift */; };
+		0A868E7028EF8CCB00B101AA /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E6F28EF8CCB00B101AA /* String+.swift */; };
+		0A868E7228EF8CD100B101AA /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E7128EF8CD100B101AA /* Date+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		0A868E5F28EF84F700B101AA /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		0A868E6A28EF881300B101AA /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		0A868E6D28EF8A1A00B101AA /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
+		0A868E6F28EF8CCB00B101AA /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		0A868E7128EF8CD100B101AA /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				0A868E6D28EF8A1A00B101AA /* UIAlertController+.swift */,
+				0A868E6F28EF8CCB00B101AA /* String+.swift */,
+				0A868E7128EF8CD100B101AA /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,7 +309,9 @@
 				0A868E6E28EF8A1A00B101AA /* UIAlertController+.swift in Sources */,
 				0A868E5E28EF838700B101AA /* HomeViewController.swift in Sources */,
 				0A868E6028EF84F700B101AA /* InputViewController.swift in Sources */,
+				0A868E7028EF8CCB00B101AA /* String+.swift in Sources */,
 				0A868E6B28EF881300B101AA /* Memo.swift in Sources */,
+				0A868E7228EF8CD100B101AA /* Date+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
