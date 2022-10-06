@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     private lazy var goToInputViewBarButtonItem = UIBarButtonItem(
@@ -13,12 +14,28 @@ class HomeViewController: UIViewController {
         style: .done,
         target: self,
         action: #selector(goToInputView))
+    
+    private let realm = try! Realm()
+    
+    private var memos: Results<Memo>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavBar()
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let isEmptyMemos = realm.objects(Memo.self).filter({ $0.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty })
+        try! realm.write {
+            realm.delete(isEmptyMemos)
+        }
+        
+        memos = realm.objects(Memo.self)
+        print(memos)
     }
     
     @objc private func goToInputView() {

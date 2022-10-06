@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 class InputViewController: UIViewController {
     private lazy var deleteMemoBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteMemo))
@@ -24,6 +25,10 @@ class InputViewController: UIViewController {
         textView.delegate = self
         return textView
     }()
+    
+    private let realm = try! Realm()
+    
+    var memo: Memo!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +37,30 @@ class InputViewController: UIViewController {
         setupViews()
     }
     
-    @objc private func deleteMemo() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if let memo = memo {
+            textView.text = memo.text
+        } else {
+            memo = Memo()
+            try! realm.write {
+                realm.add(memo)
+            }
+        }
+    }
+    
+    @objc private func deleteMemo() {
+        let alert = UIAlertController(title: "Delete memo?", message: nil, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let delete = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            try! self.realm.write {
+                self.realm.delete(self.memo)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        alert.addActions([cancel, delete])
+        present(alert, animated: true)
     }
     
     @objc private func close() {
@@ -55,4 +82,10 @@ class InputViewController: UIViewController {
     }
 }
 
-extension InputViewController: UITextViewDelegate {}
+extension InputViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        try! realm.write {
+            memo.changeText(text: textView.text)
+        }
+    }
+}
