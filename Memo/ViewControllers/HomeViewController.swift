@@ -8,11 +8,33 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    private lazy var goToInputViewBarButtonItem = UIBarButtonItem(
+        image: UIImage(systemName: "square.and.pencil"),
+        style: .done,
+        target: self,
+        action: #selector(goToInputView))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavBar()
         setupViews()
+    }
+    
+    @objc private func goToInputView() {
+        
+    }
+    
+    private func setupNavBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = .systemIndigo
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = .white
+        
+        navigationItem.title = "Memos"
+        navigationItem.rightBarButtonItem = goToInputViewBarButtonItem
     }
     
     private func setupViews() {
