@@ -50,6 +50,14 @@ class InputViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if memo.text.isEmpty {
+            textView.becomeFirstResponder()
+        }
+    }
+    
     @objc private func deleteMemo() {
         let alert = UIAlertController(title: "Delete memo?", message: nil, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
