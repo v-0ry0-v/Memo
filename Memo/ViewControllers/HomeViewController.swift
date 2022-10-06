@@ -15,6 +15,15 @@ class HomeViewController: UIViewController {
         target: self,
         action: #selector(goToInputView))
     
+    private lazy var memosTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.frame = view.frame
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+    
     private let realm = try! Realm()
     
     private var memos: Results<Memo>!
@@ -34,8 +43,9 @@ class HomeViewController: UIViewController {
             realm.delete(isEmptyMemos)
         }
         
-        memos = realm.objects(Memo.self)
-        print(memos)
+        memos = realm.objects(Memo.self).sorted(byKeyPath: "updatedAt", ascending: false)
+        
+        memosTableView.reloadData()
     }
     
     @objc private func goToInputView() {
@@ -57,5 +67,32 @@ class HomeViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        
+        view.addSubview(memosTableView)
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let inputVC = InputViewController()
+        inputVC.memo = memos[indexPath.row]
+        navigationController?.pushViewController(inputVC, animated: true)
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return memos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = memos[indexPath.row].text
+        cell.textLabel?.font = .boldSystemFont(ofSize: 25)
+        cell.detailTextLabel?.text = memos[indexPath.row].updatedAt.description
+        cell.detailTextLabel?.textColor = .gray
+        return cell
     }
 }
