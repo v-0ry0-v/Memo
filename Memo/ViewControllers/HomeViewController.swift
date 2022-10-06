@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func goToInputView() {
-        
+        let inputVC = InputViewController()
+        navigationController?.pushViewController(inputVC, animated: true)
     }
     
     private func setupNavBar() {
