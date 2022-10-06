@@ -6,24 +6,27 @@
 //
 
 import UIKit
+import SnapKit
 
 class InputViewController: UIViewController {
+    private lazy var deleteMemoBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteMemo))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupNavBar()
+        setupViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc private func deleteMemo() {
+        
     }
-    */
-
+    
+    private func setupNavBar() {
+        navigationItem.rightBarButtonItem = deleteMemoBarButtonItem
+    }
+    
+    private func setupViews() {
+        view.backgroundColor = .white
+    }
 }
