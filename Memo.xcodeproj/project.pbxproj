@@ -18,6 +18,8 @@
 		0A868E6328EF858100B101AA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A868E6228EF858100B101AA /* SnapKit */; };
 		0A868E6628EF87FC00B101AA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0A868E6528EF87FC00B101AA /* Realm */; };
 		0A868E6828EF87FC00B101AA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A868E6728EF87FC00B101AA /* RealmSwift */; };
+		0A868E6B28EF881300B101AA /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E6A28EF881300B101AA /* Memo.swift */; };
+		0A868E6E28EF8A1A00B101AA /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E6D28EF8A1A00B101AA /* UIAlertController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		0A868E4F28EF834300B101AA /* MemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A868E5D28EF838700B101AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A868E5F28EF84F700B101AA /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		0A868E6A28EF881300B101AA /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		0A868E6D28EF8A1A00B101AA /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		0A868E2B28EF834300B101AA /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				0A868E6C28EF8A1000B101AA /* Extensions */,
+				0A868E6928EF880C00B101AA /* Models */,
 				0A868E5C28EF837600B101AA /* ViewControllers */,
 				0A868E2C28EF834300B101AA /* AppDelegate.swift */,
 				0A868E2E28EF834300B101AA /* SceneDelegate.swift */,
@@ -136,6 +142,22 @@
 				0A868E5F28EF84F700B101AA /* InputViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0A868E6928EF880C00B101AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A868E6A28EF881300B101AA /* Memo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A868E6C28EF8A1000B101AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A868E6D28EF8A1A00B101AA /* UIAlertController+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,8 +300,10 @@
 			files = (
 				0A868E2D28EF834300B101AA /* AppDelegate.swift in Sources */,
 				0A868E2F28EF834300B101AA /* SceneDelegate.swift in Sources */,
+				0A868E6E28EF8A1A00B101AA /* UIAlertController+.swift in Sources */,
 				0A868E5E28EF838700B101AA /* HomeViewController.swift in Sources */,
 				0A868E6028EF84F700B101AA /* InputViewController.swift in Sources */,
+				0A868E6B28EF881300B101AA /* Memo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
