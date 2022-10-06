@@ -14,6 +14,7 @@
 		0A868E4E28EF834300B101AA /* MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E4D28EF834300B101AA /* MemoUITests.swift */; };
 		0A868E5028EF834300B101AA /* MemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E4F28EF834300B101AA /* MemoUITestsLaunchTests.swift */; };
 		0A868E5E28EF838700B101AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E5D28EF838700B101AA /* HomeViewController.swift */; };
+		0A868E6028EF84F700B101AA /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A868E5F28EF84F700B101AA /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		0A868E4D28EF834300B101AA /* MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITests.swift; sourceTree = "<group>"; };
 		0A868E4F28EF834300B101AA /* MemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A868E5D28EF838700B101AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A868E5F28EF84F700B101AA /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				0A868E5D28EF838700B101AA /* HomeViewController.swift */,
+				0A868E5F28EF84F700B101AA /* InputViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				0A868E2D28EF834300B101AA /* AppDelegate.swift in Sources */,
 				0A868E2F28EF834300B101AA /* SceneDelegate.swift in Sources */,
 				0A868E5E28EF838700B101AA /* HomeViewController.swift in Sources */,
+				0A868E6028EF84F700B101AA /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
