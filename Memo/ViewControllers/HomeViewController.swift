@@ -89,9 +89,9 @@ extension HomeViewController: UITableViewDataSource {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.selectionStyle = .none
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = memos[indexPath.row].text
+        cell.textLabel?.text = memos[indexPath.row].text.replaceNewlineWithSpace
         cell.textLabel?.font = .boldSystemFont(ofSize: 25)
-        cell.detailTextLabel?.text = memos[indexPath.row].updatedAt.description
+        cell.detailTextLabel?.text = memos[indexPath.row].updatedAt.toFormatString("yyyy/M/d H:mm:ss")
         cell.detailTextLabel?.textColor = .gray
         return cell
     }
